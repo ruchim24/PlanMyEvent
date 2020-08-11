@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+<div calss="container">
+<header class="jumbotron">
+	<h1>
+		<i class="fas fa-award"></i>
+		Welcome to PlanMyEvent
+	</h1>
+	<p>
+		One Place To Organise All Your Events.
+	</p>
+ <a href="/events/new">Add New Event</a>
+</header>
+	
+	
+		<div class="row dis"  >
+			<% events.forEach(function(event){ %>
+			<div class="col-md-3 col-sm-6">
+				<div >
+					<div  class="img-thumbnail img-fluid  " style="display:flex;flex-wrap:wrap;">
+					<img  src="<%= event.image %>"  alt="">
+					</div>
+					<div class="caption text-center">
+						<h4>
+							<%= event.name %>
+						</h4>
+						 <p>
+                       <a href="/events/<%= event._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+					</div>
+				</div>
+			</div>
+			 <%	}) %>
+	        </div>
+		</div>
+	
+<%- include("../partials/footer") %>
